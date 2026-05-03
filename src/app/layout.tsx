@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.scss";
+import "./globals.css";              // Tailwind
+import "../styles/base.scss";        // SCSS
+import "../styles/components.scss";
+import "../styles/tokens.scss";
 
 export const metadata: Metadata = {
   title: "Phutkarito — ფუტკარიტო",
