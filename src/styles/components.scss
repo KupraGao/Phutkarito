@@ -21,4 +21,5 @@
   box-shadow: var(--shadow);
   border-radius: var(--radius-xl);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
