@@ -1,40 +1,36 @@
 "use server";
 
-// ❌ დროებით ვთიშავთ Resend-ს, რადგან Vercel-ზე API key არ გვაქვს
-// import { Resend } from "resend";
+import { Resend } from "resend";
 
-// ❌ ეს ხაზიც გამორთულია, რადგან აქედან მოდიოდა build error
-// const resend = new Resend(process.env.RESEND_API_KEY);
+// 🔑 ვიღებთ API key-ს environment variable-იდან
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(formData: FormData) {
   try {
-    // 🟡 დროებითი ლოგიკა — უბრალოდ ვამოწმებთ რომ ფორმა მუშაობს
-    console.log("📩 ფორმა მიღებულია (დროებითი რეჟიმი)");
+    // 🟡 მონაცემების ამოღება ფორმიდან
+    const name = formData.get("name");
+    const phone = formData.get("phone");
+    const product = formData.get("product");
+    const message = formData.get("message");
 
-    console.log({
-      name: formData.get("name"),        // მომხმარებლის სახელი
-      phone: formData.get("phone"),      // ტელეფონი
-      product: formData.get("product"),  // არჩეული პროდუქტი
-      message: formData.get("message"),  // შეტყობინება
-    });
+    // 🧪 ლოგი (debug-ისთვის)
+    console.log("📩 ფორმა მიღებულია:", { name, phone, product, message });
 
-    // ❌ Resend გაგზავნა დროებით გამორთულია
-    /*
+    // 📧 Resend email გაგზავნა
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "onboarding@resend.dev", // 🔥 შემდეგში შევცვლით custom domain-ით
       to: "phutkarito@gmail.com",
       subject: "ახალი შეკვეთა",
       html: `
         <h2>ახალი შეკვეთა</h2>
-        <p><b>სახელი:</b> ${formData.get("name")}</p>
-        <p><b>ტელეფონი:</b> ${formData.get("phone")}</p>
-        <p><b>პროდუქტი:</b> ${formData.get("product")}</p>
-        <p><b>შეტყობინება:</b> ${formData.get("message")}</p>
+        <p><b>სახელი:</b> ${name}</p>
+        <p><b>ტელეფონი:</b> ${phone}</p>
+        <p><b>პროდუქტი:</b> ${product}</p>
+        <p><b>შეტყობინება:</b> ${message}</p>
       `,
     });
-    */
 
-    console.log("✅ ფორმა დამუშავდა (მეილი დროებით გათიშულია)");
+    console.log("✅ მეილი გაიგზავნა წარმატებით");
   } catch (error) {
     console.log("❌ შეცდომა:", error);
   }
