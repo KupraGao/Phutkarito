@@ -10,10 +10,10 @@ export default function Products() {
             <p className="font-bold text-yellow-700">პროდუქცია</p>
             <h2 className="section-title">რას გთავაზობთ</h2>
           </div>
-          <p className="section-text max-w-xl">
+          {/* <p className="section-text max-w-xl">
             აქ ფასები და ზუსტი რაოდენობები მარტივად შეიცვლება მონაცემებიდან.
             მომავალში დაემატება კალათა და გადახდის ღილაკი.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
