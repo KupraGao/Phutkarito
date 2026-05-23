@@ -1,75 +1,215 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
+
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[999] bg-white/90 backdrop-blur shadow">
-      
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
-        
-        {/* 🔥 ლოგო */}
-       <a
-  href="#top"
-  className="font-black text-xl text-yellow-500 hover:text-yellow-600 transition"
->
-  Phutkarito
-</a>
+    <header
+      className="
+        fixed left-0 top-0 z-[999]
+        w-full bg-white/90
+        shadow backdrop-blur
+      "
+    >
 
-        {/* 🖥 desktop menu */}
-        <nav className="hidden md:flex items-center gap-6 font-semibold">
-          <a href="#products">პროდუქცია</a>
-          <a href="#about">ჩვენ შესახებ</a>
-          <a href="#news">სიახლეები</a>
-          <a href="#contact">კონტაქტი</a>
+      {/* ========================================= */}
+      {/* CONTAINER */}
+      {/* ========================================= */}
+
+      <div
+        className="
+          mx-auto flex max-w-7xl
+          items-center justify-between
+           py-2
+        "
+      >
+
+        {/* ========================================= */}
+        {/* LOGO */}
+        {/* ========================================= */}
+
+        <a
+          href="#top"
+          className="flex items-center shadow-lg rounded-[10px] bg-white/80"
+        >
+
+          <Image
+            src="/images/logo3.png" alt="Hutkarito Logo" width={240} height={80} priority className=" rounded-[10px] h-auto   w-[170px]   md:w-[240px] "
+          />
+
+        </a>
+
+        {/* ========================================= */}
+        {/* DESKTOP MENU */}
+        {/* ========================================= */}
+
+        <nav
+          className="
+            hidden items-center
+            gap-6 font-semibold
+            md:flex
+          "
+        >
+
+          <a
+            href="#products"
+            className="
+              transition
+              hover:text-yellow-600
+            "
+          >
+            პროდუქცია
+          </a>
+
+          <a
+            href="#about"
+            className="
+              transition
+              hover:text-yellow-600
+            "
+          >
+            ჩვენ შესახებ
+          </a>
+
+          <a
+            href="#news"
+            className="
+              transition
+              hover:text-yellow-600
+            "
+          >
+            სიახლეები
+          </a>
 
           <a
             href="#contact"
-            className="ml-4 bg-yellow-500 text-white px-5 py-2 rounded-[10px] font-bold hover:bg-yellow-600 transition"
+            className="
+              transition
+              hover:text-yellow-600
+            "
+          >
+            კონტაქტი
+          </a>
+
+          <a
+            href="#contact"
+            className="
+              ml-4 rounded-[10px]
+              bg-yellow-500
+              px-5 py-2
+              font-bold text-white
+              transition
+              hover:bg-yellow-600
+            "
           >
             შეკვეთა
           </a>
+
         </nav>
 
-        {/* 📱 burger */}
+        {/* ========================================= */}
+        {/* MOBILE BURGER */}
+        {/* ========================================= */}
+
         <button
-          className="md:hidden text-2xl z-[1000]"
+          className="
+            z-[1000]
+            text-2xl
+            md:hidden
+          "
           onClick={() => setOpen(!open)}
         >
           {open ? "✖" : "☰"}
         </button>
+
       </div>
 
-      {/* 🔥 overlay (background) */}
+      {/* ========================================= */}
+      {/* OVERLAY */}
+      {/* ========================================= */}
+
       {open && (
         <div
-          className="fixed inset-0 bg-black/30 z-[998]"
+          className="
+            fixed inset-0
+            z-[998]
+            bg-black/30
+          "
           onClick={() => setOpen(false)}
         />
       )}
 
-      {/* 📱 mobile menu */}
+      {/* ========================================= */}
+      {/* MOBILE MENU */}
+      {/* ========================================= */}
+
       <div
-        className={`fixed top-[70px] left-0 w-full bg-white shadow-lg px-5 py-6 flex flex-col gap-4 font-semibold md:hidden z-[999] transition-all duration-300 ${
-          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"
-        }`}
+        className={`
+          fixed left-0 top-[76px]
+          z-[999]
+          flex w-full flex-col
+          gap-4 bg-white
+          px-5 py-6
+          font-semibold shadow-lg
+          transition-all duration-300
+          md:hidden
+
+          ${
+            open
+              ? "translate-y-0 opacity-100"
+              : "pointer-events-none -translate-y-5 opacity-0"
+          }
+        `}
       >
-        <a href="#products" onClick={() => setOpen(false)}>პროდუქცია</a>
-        <a href="#about" onClick={() => setOpen(false)}>ჩვენ შესახებ</a>
-        <a href="#news" onClick={() => setOpen(false)}>სიახლეები</a>
-        <a href="#contact" onClick={() => setOpen(false)}>კონტაქტი</a>
+
+        <a
+          href="#products"
+          onClick={() => setOpen(false)}
+        >
+          პროდუქცია
+        </a>
+
+        <a
+          href="#about"
+          onClick={() => setOpen(false)}
+        >
+          ჩვენ შესახებ
+        </a>
+
+        <a
+          href="#news"
+          onClick={() => setOpen(false)}
+        >
+          სიახლეები
+        </a>
 
         <a
           href="#contact"
           onClick={() => setOpen(false)}
-          className="mt-3 bg-yellow-500 text-white px-5 py-3 rounded-[10px] text-center font-bold"
+        >
+          კონტაქტი
+        </a>
+
+        <a
+          href="#contact"
+          onClick={() => setOpen(false)}
+          className="
+            mt-3 rounded-[10px]
+            bg-yellow-500
+            px-5 py-3
+            text-center
+            font-bold text-white
+          "
         >
           შეკვეთა
         </a>
+
       </div>
+
     </header>
   );
 }

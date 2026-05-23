@@ -42,7 +42,7 @@ export default function About() {
               alt={`საფუტკრის ფოტო ${index + 1}`}
               width={420}
               height={420}
-              className="h-48 w-full rounded-[10px] object-cover shadow-xl md:h-56"
+              className="h-48 w-full rounded-[10px] object-cover shadow-xl md:h-66"
             />
           ))}
         </div>
