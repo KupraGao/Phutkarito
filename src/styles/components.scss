@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-bold transition;
+  @apply inline-flex items-center justify-center rounded-[10px] px-6 py-3 font-bold transition;
   background: linear-gradient(135deg, var(--brand), #ffd66b);
   color: #3b2507;
   box-shadow: 0 12px 30px rgba(244,165,28,.35);
@@ -9,7 +9,7 @@
 .btn-primary:hover { transform: translateY(-2px); }
 
 .btn-ghost {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-bold transition border;
+  @apply inline-flex items-center justify-center rounded-[10px] px-6 py-3 font-bold transition border;
   border-color: var(--border);
   background: rgba(255,255,255,.55);
 }
@@ -19,7 +19,7 @@
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-s);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }

@@ -28,7 +28,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="ml-4 bg-yellow-500 text-white px-5 py-2 rounded-full font-bold hover:bg-yellow-600 transition"
+            className="ml-4 bg-yellow-500 text-white px-5 py-2 rounded-[10px] font-bold hover:bg-yellow-600 transition"
           >
             შეკვეთა
           </a>
@@ -65,7 +65,7 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={() => setOpen(false)}
-          className="mt-3 bg-yellow-500 text-white px-5 py-3 rounded-full text-center font-bold"
+          className="mt-3 bg-yellow-500 text-white px-5 py-3 rounded-[10px] text-center font-bold"
         >
           შეკვეთა
         </a>

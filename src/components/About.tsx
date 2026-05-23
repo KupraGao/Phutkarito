@@ -18,14 +18,14 @@ export default function About() {
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl bg-yellow-100 p-5">
+            <div className="rounded-[10px] bg-yellow-100 p-5">
               <b>ბუნებრივი გარემო</b>
               <p className="mt-2 text-sm text-yellow-950/70">
                 შიდა ქართლის მდიდარი ბუნება და ყვავილოვანი გარემო.
               </p>
             </div>
 
-            <div className="rounded-3xl bg-green-100 p-5">
+            <div className="rounded-[10px] bg-green-100 p-5">
               <b>სანდო კომუნიკაცია</b>
               <p className="mt-2 text-sm text-yellow-950/70">
                 შეკვეთა სწრაფად კონტაქტით.
@@ -42,7 +42,7 @@ export default function About() {
               alt={`საფუტკრის ფოტო ${index + 1}`}
               width={420}
               height={420}
-              className="h-48 w-full rounded-[26px] object-cover shadow-xl md:h-56"
+              className="h-48 w-full rounded-[10px] object-cover shadow-xl md:h-56"
             />
           ))}
         </div>

@@ -39,7 +39,7 @@ export default function Contact() {
               href="https://m.me/61563146866732"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-5 py-3 rounded-full font-bold hover:bg-blue-700 transition"
+              className="inline-block bg-blue-600 text-white px-5 py-3 rounded-[10px] font-bold hover:bg-blue-700 transition"
             >
               💬 Messenger
             </a>
@@ -49,25 +49,25 @@ export default function Contact() {
         {/* 📩 ფორმა */}
         <form
           action={sendEmail}
-          className="space-y-4 rounded-[24px] bg-white/70 p-6 backdrop-blur"
+          className="space-y-4 rounded-[10px] bg-white/70 p-6 backdrop-blur"
         >
           <input
             name="name"
             placeholder="სახელი"
             required
-            className="w-full rounded-2xl border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full rounded-[10px] border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
           />
 
           <input
             name="phone"
             placeholder="ტელეფონი"
             required
-            className="w-full rounded-2xl border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full rounded-[10px] border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
           />
 
           <select
             name="product"
-            className="w-full rounded-2xl border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full rounded-[10px] border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
           >
             <option>ნატურალური თაფლი</option>
             <option>ფუტკრის ოჯახები</option>
@@ -77,12 +77,12 @@ export default function Contact() {
           <textarea
             name="message"
             placeholder="შეტყობინება"
-            className="min-h-32 w-full rounded-2xl border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
+            className="min-h-32 w-full rounded-[10px] border border-yellow-900/10 bg-white px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-400"
           />
 
           <button
             type="submit"
-            className="w-full bg-yellow-500 text-white py-4 rounded-full font-bold hover:bg-yellow-600 transition"
+            className="w-full bg-yellow-500 text-white py-4 rounded-[10px] font-bold hover:bg-yellow-600 transition"
           >
             გაგზავნა
           </button>

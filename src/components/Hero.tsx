@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden px-5 py-16 md:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
         <div>
-          <p className="mb-5 inline-flex rounded-full border border-yellow-700/20 bg-white/60 px-4 py-2 text-sm font-bold text-yellow-900">
+          <p className="mb-5 inline-flex rounded-[10px] border border-yellow-700/20 bg-white/60 px-4 py-2 text-sm font-bold text-yellow-900">
             Georgia, Gori · ბუნებრივი საფუტკრე
           </p>
           <h1 className="text-5xl font-black leading-[1.05] tracking-tight md:text-7xl">
@@ -25,7 +25,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="glass-card relative p-3">
-          <Image src="/images/453735991_1021261196285136_589212362345177722_n.jpg" alt="Phutkarito საფუტკრე" width={900} height={900} className="h-[520px] rounded-[24px] object-cover" priority />
+          <Image src="/images/453735991_1021261196285136_589212362345177722_n.jpg" alt="Phutkarito საფუტკრე" width={900} height={900} className="h-[520px] rounded-[10px] object-cover" priority />
         </div>
       </div>
     </section>
