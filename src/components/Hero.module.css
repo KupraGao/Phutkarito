@@ -357,15 +357,19 @@
 }
 
 .pause {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  pointer-events: auto;
   display: inline-flex;
-  flex: none;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
-  border: 1px solid color-mix(in srgb, var(--hero-ink) 18%, transparent);
-  border-radius: var(--site-radius);
-  background: var(--hero-panel);
+  border: 0;
+  background: url("/images/pause-honeycomb.webp") center / 42px auto no-repeat;
+  color: #fff5da;
   cursor: pointer;
 }
 

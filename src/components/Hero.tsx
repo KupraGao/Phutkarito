@@ -167,6 +167,27 @@ export default function Hero() {
             </div>
           </div>
         </div>
+        <button
+          type="button"
+          className={styles.pause}
+          aria-pressed={paused}
+          aria-label={paused ? "ანიმაციის გაშვება" : "ანიმაციის შეჩერება"}
+          onClick={() => {
+            const next = !paused;
+            setPaused(next);
+            motion.setPaused(next);
+          }}
+        >
+          {paused ? (
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M5 3.5v9l8-4.5-8-4.5z" fill="currentColor" />
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 3h3v10H4zM9 3h3v10H9z" fill="currentColor" />
+            </svg>
+          )}
+        </button>
       </div>
 
       <div className={styles.copyWrap} ref={copyRef}>
@@ -217,27 +238,6 @@ export default function Hero() {
             </button>
           ))}
         </div>
-        <button
-          type="button"
-          className={styles.pause}
-          aria-pressed={paused}
-          aria-label={paused ? "ანიმაციის გაშვება" : "ანიმაციის შეჩერება"}
-          onClick={() => {
-            const next = !paused;
-            setPaused(next);
-            motion.setPaused(next);
-          }}
-        >
-          {paused ? (
-            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M5 3.5v9l8-4.5-8-4.5z" fill="currentColor" />
-            </svg>
-          ) : (
-            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 3h3v10H4zM9 3h3v10H9z" fill="currentColor" />
-            </svg>
-          )}
-        </button>
       </div>
     </section>
   );
