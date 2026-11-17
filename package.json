@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google/model-viewer": "^4.4.0",
     "@tailwindcss/postcss": "latest",
+    "gsap": "^3.15.1",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -17,6 +19,7 @@
     "sass": "latest"
   },
   "devDependencies": {
+    "@playwright/cli": "^0.1.24",
     "@types/node": "25.6.0",
     "@types/react": "19.2.14",
     "eslint": "latest",

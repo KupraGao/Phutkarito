@@ -1,6 +1,9 @@
-import { news } from "../../../data/site";
-import Navbar from "../../../components/Navbar";
+﻿import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import Footer from "../../../components/Footer";
+import Navbar from "../../../components/Navbar";
+import { news } from "../../../data/site";
 
 export default async function ArticlePage({
   params,
@@ -8,58 +11,35 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
   const article = news.find((item) => item.slug === slug);
 
-  if (!article) {
-    return (
-      <>
-        <Navbar />
-        <h1 className="text-center py-20 text-2xl font-bold">
-          სტატია ვერ მოიძებნა
-        </h1>
-      </>
-    );
-  }
+  if (!article) notFound();
 
   return (
     <>
-      {/* 🔝 HEADER */}
-      <Navbar />
-
-      <div className="max-w-3xl mx-auto px-5 pt-28 pb-20">
-        
-        {/* 🔙 BACK BUTTON (გასწორებული) */}
-        <Link
-          href="/#news"
-          className="mb-6 inline-block text-sm font-bold text-yellow-700 hover:underline"
-        >
-          ← უკან დაბრუნება
-        </Link>
-
-        {/* 🖼 IMAGE */}
-        <img
-          src={article.image}
-          alt={article.title}
-          className="w-full h-80 object-cover rounded-3xl"
-        />
-
-        {/* 📅 DATE */}
-        <p className="mt-6 text-green-700 font-bold">
-          {article.date}
-        </p>
-
-        {/* 🧾 TITLE */}
-        <h1 className="text-4xl font-black mt-2">
-          {article.title}
-        </h1>
-
-        {/* 📖 CONTENT */}
-        <p className="mt-6 whitespace-pre-line leading-8 text-gray-700 text-lg">
-          {article.content}
-        </p>
-
-      </div>
+      <Navbar article />
+      <main id="article" className="article-page bg-[var(--paper)] px-5 pb-20 pt-32 text-[var(--ink)]">
+        <article className="mx-auto max-w-[960px]">
+          <Link href="/#news" className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">
+            ← ყველა სიახლე
+          </Link>
+          <p className="mt-7 text-sm font-semibold text-[#435a43]">{article.date}</p>
+          <h1 className="site-heading mt-3">{article.title}</h1>
+          <Image
+            src={article.image}
+            alt=""
+            width={960}
+            height={540}
+            sizes="(min-width: 1000px) 960px, calc(100vw - 40px)"
+            className="mt-8 aspect-video w-full rounded-[var(--site-radius)] object-cover"
+            priority
+          />
+          <div className="mx-auto mt-9 grid max-w-[66ch] gap-5 text-lg leading-relaxed">
+            {article.content.trim().split(/\r?\n\s*\r?\n/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+        </article>
+      </main>
+      <Footer />
     </>
   );
 }

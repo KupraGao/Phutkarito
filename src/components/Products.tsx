@@ -1,100 +1,32 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { products } from "../data/site";
 
 export default function Products() {
   return (
-    <section id="products" className="px-5 py-20">
-      <div className="mx-auto max-w-7xl">
-
-        {/* Section Header */}
-        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-
-          <div>
-            <p className="font-bold text-yellow-700">
-              პროდუქცია
-            </p>
-
-            <h2 className="section-title">
-              რას გთავაზობთ
-            </h2>
-          </div>
-
-          {/*
-          <p className="section-text max-w-xl">
-            აქ ფასები და ზუსტი რაოდენობები მარტივად შეიცვლება მონაცემებიდან.
-            მომავალში დაემატება კალათა და გადახდის ღილაკი.
-          </p>
-          */}
-
-        </div>
-
-        {/* Products Grid */}
-        <div className="grid gap-6 md:grid-cols-3">
-
-          {products.map((product) => (
-            <article
-              key={product.name}
-              className="glass-card overflow-hidden"
-            >
-
-              {/* Product Image */}
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={700}
-                height={520}
-                className="h-64 w-full object-cover"
-              />
-
-              {/* Product Content */}
-              <div className="p-6">
-
-                {/* Volume */}
-                <p className="mb-2 text-sm font-bold text-green-700">
-                  {product.volume}
-                </p>
-
-                {/* Product Name */}
-                <h3 className="text-2xl font-black">
-                  {product.name}
-                </h3>
-
-                {/* Description */}
-                <p className="mt-3 leading-7 text-yellow-950/70">
-                  {product.description}
-                </p>
-
-                {/* Price + Button */}
-                <div
-                  className="
-                    mt-6 flex items-center justify-between gap-3
-                    max-[1224px]:flex-col
-                    max-[1224px]:items-start
-                  "
-                >
-
-                  <b className="text-lg">
-                    {product.price}
-                  </b>
-
-                  <a
-                    href="#contact"
-                    className="
-                      btn-primary px-4 py-2 text-center
-                      max-[1224px]:w-full
-                    "
-                  >
-                    შეკვეთა
-                  </a>
-
-                </div>
-
+    <section id="products" className="site-section">
+      <h2 className="site-heading">საფუტკრის პროდუქცია</h2>
+      <div className="site-grid catalog-grid">
+        {products.map((product) => (
+          <article key={product.name} className="site-card">
+            <Image
+              src={product.image}
+              alt={product.imageAlt}
+              width={700}
+              height={520}
+              sizes="(min-width: 1000px) 50vw, (min-width: 640px) 50vw, 100vw"
+              className="site-card-photo catalog-photo w-full object-contain"
+            />
+            <div className="flex flex-1 flex-col gap-3 p-6">
+              <h3 className="text-2xl font-bold">{product.name}</h3>
+              <p className="text-sm font-semibold">{product.volume}</p>
+              <p className="mb-4 leading-relaxed">{product.description}</p>
+              <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-current/15 pt-4">
+                <span className="text-sm font-semibold">{product.price}</span>
+                <a href="#contact" className="site-action">შეკვეთა</a>
               </div>
-
-            </article>
-          ))}
-
-        </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

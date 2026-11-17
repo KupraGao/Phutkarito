@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";              // Tailwind
+import "./site.css";
 import "../styles/base.scss";        // SCSS
-import "../styles/components.scss";
 import "../styles/tokens.scss";
 
 export const metadata: Metadata = {
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ka">
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
