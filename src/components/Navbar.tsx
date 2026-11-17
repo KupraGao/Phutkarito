@@ -38,7 +38,7 @@ export default function Navbar() {
         >
 
           <Image
-            src="/images/logo3.png" alt="Hutkarito Logo" width={240} height={80} priority className=" rounded-[10px] h-auto   w-[170px]   md:w-[240px] "
+            src="/images/logo3.png" alt="Hutkarito Logo" width={240} height={101} priority className=" rounded-[10px] h-auto   w-[170px]   md:w-[240px] "
           />
 
         </a>
