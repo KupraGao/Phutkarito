@@ -297,13 +297,19 @@
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 
-.tab:hover {
-  transform: translateY(-2px);
-}
-
 .tab[aria-selected="true"] {
   border-color: color-mix(in srgb, var(--hero-ink) 48%, transparent);
   transform: translateY(-4px);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .tab:hover {
+    transform: translateY(-7px);
+  }
+
+  .tab[aria-selected="true"]:hover {
+    transform: translateY(-9px);
+  }
 }
 
 .tab:active {
@@ -459,6 +465,7 @@
   .switcher {
     justify-content: flex-start;
     overflow-x: auto;
+    padding-top: 10px;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
